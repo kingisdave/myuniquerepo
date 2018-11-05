@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Silly Game2</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript">
+		
+		function danccer() {
+			
+    		changeT = parseInt(Math.random()*600) + "px";
+    		changeL = parseInt(Math.random()*1000) + "px";
+    		document.getElementById('dancerr').style.top = changeT;
+    		document.getElementById('dancerr').style.left = changeL;
+    	}
+	</script>
+	<style type="text/css">
+		body{
+			background-color: "#ffffff";
+		}
+		#dancerr{
+			height: 100px;
+			width: 100px;
+			position:relative;
+			top:100px;
+			left:100px;
+			background-position: contain;
+			animation-name: c;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+		}
+		
+		/*@keyframes c{
+			from{background-color: red}
+			to{background-color: blue}
+		}
+*/
+	</style>
+</head>
+<body>
+	<div id="dancerr" onmouseover="danccer()">
+		<img name="giffy11" src="giffy11.gif" width="200" height="190" border="0" id="giffy11" alt="giffy"/>
+	</div>
+</body>
+</html>

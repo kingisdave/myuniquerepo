@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Countdown</title>
+	<style>
+		body{
+			background-color: #F5F5F5;
+			color: black;
+			font-size: 25px;
+		}
+		table{
+			background-image: url(birds2.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			border: 5px solid;
+			border-radius: 25%;
+			height: 300px;
+			width: 200px;
+		}
+		button{
+			width: 70px;
+			height: 55px;
+			background-color: green;
+			font-size: 18px;
+			border-radius: 25%;
+
+		}
+		input{
+			height: 30px;
+			width: 120px;
+		}
+	</style>
+	<script type="text/javascript">
+		function starton(){
+			if (hr.value > 0 && hr.value<60) {
+				if(mn.value==""){
+					hr.value--;
+					mn.value=60;
+				}
+				if(mn.value=="0"){
+					hr.value--;
+					mn.value=60;
+				}
+				
+				}
+					
+			if (mn.value > 0 && mn.value <= 60) {
+				if (sc.value == ""){
+					mn.value--;
+					sc.value = 60;
+				}
+				if (sc.value == "0") {
+					mn.value--;
+					sc.value = 60;
+				}
+				if (mn.value < 0){
+					mn.value = 0;
+					sc.value = 0;
+					alert("Time up!!!");
+				}
+				
+				
+			}
+			
+				
+			if (sc.value >0 && sc.value <= 60) {
+				sc.value--;
+				setTimeout(starton,1000);
+			}
+				if (sc.value <= 9 && sc.value > 0) {
+					sc.value ="0" + sc.value;
+				}
+			}
+			
+	
+	</script>
+</head>
+<body >
+	<table align="center">
+		<tr>
+			<td colspan="3" align="center" >COUNTDOWN TIMER</td>
+		</tr>
+		<tr>
+			<td><input type="text" id="hr" name="hr" placeholder="Hours"></td><td><input type="text" id="mn" name="mn" placeholder="Minutes"></td><td><input type="text" id="sc" name="sc" placeholder="Seconds"></td>
+		</tr>
+		<tr><td colspan="3" align="center"><button onclick="starton()" style="color: blue">START</button></td></tr>
+	</table>
+</body>
+</html>
